@@ -144,14 +144,13 @@ resolveSystemId(const XML_Char *base, const XML_Char *systemId,
 static int
 externalEntityRefFilemap(XML_Parser parser, const XML_Char *context,
                          const XML_Char *base, const XML_Char *systemId,
-                         const XML_Char *publicId) {
+                         const XML_Char *UNUSED_P(publicId)) {
   int result;
   XML_Char *s;
   const XML_Char *filename;
   XML_Parser entParser = XML_ExternalEntityParserCreate(parser, context, 0);
   int filemapRes;
   PROCESS_ARGS args;
-  UNUSED_P(publicId);
   args.retPtr = &result;
   args.parser = entParser;
   filename = resolveSystemId(base, systemId, &s);
@@ -222,12 +221,11 @@ processStream(const XML_Char *filename, XML_Parser parser) {
 static int
 externalEntityRefStream(XML_Parser parser, const XML_Char *context,
                         const XML_Char *base, const XML_Char *systemId,
-                        const XML_Char *publicId) {
+                        const XML_Char *UNUSED_P(publicId)) {
   XML_Char *s;
   const XML_Char *filename;
   int ret;
   XML_Parser entParser = XML_ExternalEntityParserCreate(parser, context, 0);
-  UNUSED_P(publicId);
   filename = resolveSystemId(base, systemId, &s);
   XML_SetBase(entParser, filename);
   ret = processStream(filename, entParser);
