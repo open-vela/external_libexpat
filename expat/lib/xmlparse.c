@@ -5257,11 +5257,8 @@ internalEntityProcessor(XML_Parser parser, const char *s, const char *end,
 }
 
 static enum XML_Error PTRCALL
-errorProcessor(XML_Parser parser, const char *s, const char *end,
-               const char **nextPtr) {
-  UNUSED_P(s);
-  UNUSED_P(end);
-  UNUSED_P(nextPtr);
+errorProcessor(XML_Parser parser, const char *UNUSED_P(s),
+               const char *UNUSED_P(end), const char **UNUSED_P(nextPtr)) {
   return parser->m_errorCode;
 }
 

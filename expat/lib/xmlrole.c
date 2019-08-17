@@ -195,11 +195,8 @@ prolog1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-prolog2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+prolog2(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NONE;
@@ -215,11 +212,8 @@ prolog2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-doctype0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+doctype0(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_DOCTYPE_NONE;
@@ -258,11 +252,8 @@ doctype1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-doctype2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+doctype2(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_DOCTYPE_NONE;
@@ -274,11 +265,8 @@ doctype2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-doctype3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+doctype3(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_DOCTYPE_NONE;
@@ -290,11 +278,8 @@ doctype3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-doctype4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+doctype4(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_DOCTYPE_NONE;
@@ -309,11 +294,8 @@ doctype4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-doctype5(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+doctype5(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_DOCTYPE_NONE;
@@ -407,11 +389,8 @@ externalSubset1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 #endif /* XML_DTD */
 
 static int PTRCALL
-entity0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity0(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -426,11 +405,8 @@ entity0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity1(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -466,11 +442,8 @@ entity2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity3(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -482,11 +455,8 @@ entity3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity4(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -517,11 +487,8 @@ entity5(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity6(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity6(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -558,11 +525,8 @@ entity7(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity8(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity8(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -574,11 +538,8 @@ entity8(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity9(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-        const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity9(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+        const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -590,11 +551,8 @@ entity9(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-entity10(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+entity10(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ENTITY_NONE;
@@ -606,11 +564,8 @@ entity10(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-notation0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+notation0(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NOTATION_NONE;
@@ -642,11 +597,8 @@ notation1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-notation2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+notation2(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NOTATION_NONE;
@@ -658,11 +610,8 @@ notation2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-notation3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+notation3(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NOTATION_NONE;
@@ -675,11 +624,8 @@ notation3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-notation4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+notation4(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NOTATION_NONE;
@@ -695,11 +641,8 @@ notation4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist0(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -712,11 +655,8 @@ attlist0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist1(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -762,11 +702,8 @@ attlist2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist3(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -780,11 +717,8 @@ attlist3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist4(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -799,11 +733,8 @@ attlist4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist5(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist5(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -815,11 +746,8 @@ attlist5(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist6(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist6(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -831,11 +759,8 @@ attlist6(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist7(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist7(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -881,11 +806,8 @@ attlist8(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-attlist9(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+attlist9(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ATTLIST_NONE;
@@ -897,11 +819,8 @@ attlist9(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-element0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+element0(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ELEMENT_NONE;
@@ -974,11 +893,8 @@ element2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-element3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+element3(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ELEMENT_NONE;
@@ -998,11 +914,8 @@ element3(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-element4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+element4(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ELEMENT_NONE;
@@ -1015,11 +928,8 @@ element4(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-element5(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+element5(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ELEMENT_NONE;
@@ -1035,11 +945,8 @@ element5(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-element6(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+element6(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ELEMENT_NONE;
@@ -1064,11 +971,8 @@ element6(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-element7(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-         const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+element7(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+         const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_ELEMENT_NONE;
@@ -1133,11 +1037,8 @@ condSect0(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-condSect1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+condSect1(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NONE;
@@ -1150,11 +1051,8 @@ condSect1(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 }
 
 static int PTRCALL
-condSect2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+condSect2(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return XML_ROLE_NONE;
@@ -1168,11 +1066,8 @@ condSect2(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
 #endif /* XML_DTD */
 
 static int PTRCALL
-declClose(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-          const ENCODING *enc) {
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+declClose(PROLOG_STATE *state, int tok, const char *UNUSED_P(ptr),
+          const char *UNUSED_P(end), const ENCODING *UNUSED_P(enc)) {
   switch (tok) {
   case XML_TOK_PROLOG_S:
     return state->role_none;
@@ -1204,13 +1099,9 @@ declClose(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
  * LCOV_EXCL_START
  */
 static int PTRCALL
-error(PROLOG_STATE *state, int tok, const char *ptr, const char *end,
-      const ENCODING *enc) {
-  UNUSED_P(state);
-  UNUSED_P(tok);
-  UNUSED_P(ptr);
-  UNUSED_P(end);
-  UNUSED_P(enc);
+error(PROLOG_STATE *UNUSED_P(state), int UNUSED_P(tok),
+      const char *UNUSED_P(ptr), const char *UNUSED_P(end),
+      const ENCODING *UNUSED_P(enc)) {
   return XML_ROLE_NONE;
 }
 /* LCOV_EXCL_STOP */

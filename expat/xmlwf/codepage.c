@@ -83,16 +83,12 @@ codepageConvert(int cp, const char *p) {
 #else /* not _WIN32 */
 
 int
-codepageMap(int cp, int *map) {
-  UNUSED_P(cp);
-  UNUSED_P(map);
+codepageMap(int UNUSED_P(cp), int *UNUSED_P(map)) {
   return 0;
 }
 
 int
-codepageConvert(int cp, const char *p) {
-  UNUSED_P(cp);
-  UNUSED_P(p);
+codepageConvert(int UNUSED_P(cp), const char *UNUSED_P(p)) {
   return -1;
 }
 
