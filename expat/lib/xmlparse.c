@@ -401,7 +401,7 @@ static enum XML_Error initializeEncoding(XML_Parser parser);
 static enum XML_Error doProlog(XML_Parser parser, const ENCODING *enc,
                                const char *s, const char *end, int tok,
                                const char *next, const char **nextPtr,
-                               XML_Bool haveMore, XML_Bool allowClosingDoctype);
+                               XML_Bool haveMore);
 static enum XML_Error processInternalEntity(XML_Parser parser, ENTITY *entity,
                                             XML_Bool betweenDecl);
 static enum XML_Error doContent(XML_Parser parser, int startTagLevel,
@@ -4046,7 +4046,7 @@ externalParEntProcessor(XML_Parser parser, const char *s, const char *end,
 
   parser->m_processor = prologProcessor;
   return doProlog(parser, parser->m_encoding, s, end, tok, next, nextPtr,
-                  (XML_Bool)! parser->m_parsingStatus.finalBuffer, XML_TRUE);
+                  (XML_Bool)! parser->m_parsingStatus.finalBuffer);
 }
 
 static enum XML_Error PTRCALL
@@ -4090,13 +4090,12 @@ prologProcessor(XML_Parser parser, const char *s, const char *end,
   const char *next = s;
   int tok = XmlPrologTok(parser->m_encoding, s, end, &next);
   return doProlog(parser, parser->m_encoding, s, end, tok, next, nextPtr,
-                  (XML_Bool)! parser->m_parsingStatus.finalBuffer, XML_TRUE);
+                  (XML_Bool)! parser->m_parsingStatus.finalBuffer);
 }
 
 static enum XML_Error
 doProlog(XML_Parser parser, const ENCODING *enc, const char *s, const char *end,
-         int tok, const char *next, const char **nextPtr, XML_Bool haveMore,
-         XML_Bool allowClosingDoctype) {
+         int tok, const char *next, const char **nextPtr, XML_Bool haveMore) {
 #ifdef XML_DTD
   static const XML_Char externalSubsetName[] = {ASCII_HASH, '\0'};
 #endif /* XML_DTD */
@@ -4272,11 +4271,6 @@ doProlog(XML_Parser parser, const ENCODING *enc, const char *s, const char *end,
       }
       break;
     case XML_ROLE_DOCTYPE_CLOSE:
-      if (allowClosingDoctype != XML_TRUE) {
-        /* Must not close doctype from within expanded parameter entities */
-        return XML_ERROR_INVALID_TOKEN;
-      }
-
       if (parser->m_doctypeName) {
         parser->m_startDoctypeDeclHandler(
             parser->m_handlerArg, parser->m_doctypeName, parser->m_doctypeSysid,
@@ -5180,7 +5174,7 @@ processInternalEntity(XML_Parser parser, ENTITY *entity, XML_Bool betweenDecl) {
     int tok
         = XmlPrologTok(parser->m_internalEncoding, textStart, textEnd, &next);
     result = doProlog(parser, parser->m_internalEncoding, textStart, textEnd,
-                      tok, next, &next, XML_FALSE, XML_FALSE);
+                      tok, next, &next, XML_FALSE);
   } else
 #endif /* XML_DTD */
     result = doContent(parser, parser->m_tagLevel, parser->m_internalEncoding,
@@ -5223,7 +5217,7 @@ internalEntityProcessor(XML_Parser parser, const char *s, const char *end,
     int tok
         = XmlPrologTok(parser->m_internalEncoding, textStart, textEnd, &next);
     result = doProlog(parser, parser->m_internalEncoding, textStart, textEnd,
-                      tok, next, &next, XML_FALSE, XML_TRUE);
+                      tok, next, &next, XML_FALSE);
   } else
 #endif /* XML_DTD */
     result = doContent(parser, openEntity->startTagLevel,
@@ -5250,7 +5244,7 @@ internalEntityProcessor(XML_Parser parser, const char *s, const char *end,
     parser->m_processor = prologProcessor;
     tok = XmlPrologTok(parser->m_encoding, s, end, &next);
     return doProlog(parser, parser->m_encoding, s, end, tok, next, nextPtr,
-                    (XML_Bool)! parser->m_parsingStatus.finalBuffer, XML_TRUE);
+                    (XML_Bool)! parser->m_parsingStatus.finalBuffer);
   } else
 #endif /* XML_DTD */
   {
