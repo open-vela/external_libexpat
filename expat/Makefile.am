@@ -76,9 +76,6 @@ EXTRA_DIST = \
     conftools/get-version.sh \
     conftools/PrintPath \
     \
-    xmlwf/xmlwf_helpgen.py \
-    xmlwf/xmlwf_helpgen.sh \
-    \
     Changes \
     README.md \
     \
