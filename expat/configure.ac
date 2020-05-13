@@ -330,7 +330,7 @@ AC_CONFIG_FILES([run.sh], [chmod +x run.sh])
 AC_OUTPUT
 
 
-cat <<EOF
+AC_MSG_NOTICE([
 
 Automake flags (can be overridden by user flags):
   [AM_CPPFLAGS]: ${AM_CPPFLAGS}
@@ -342,5 +342,4 @@ User flags (override Automake flags on conflict):
      CPPFLAGS: ${CPPFLAGS}
        CFLAGS: ${CFLAGS}
      CXXFLAGS: ${CXXFLAGS}
-      LDFLAGS: ${LDFLAGS}
-EOF
+      LDFLAGS: ${LDFLAGS}])

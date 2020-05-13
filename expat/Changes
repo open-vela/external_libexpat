@@ -3,10 +3,17 @@ NOTE: We are looking for help with a few things:
       If you can help, please get in touch.  Thanks!
 
 Release x.x.x xxx xxxxxxxxx xx xxxx
+        Bug fixes:
+  #390 #395 #398  Fix undefined behavior during parsing caused by
+                    pointer arithmetic with NULL pointers
+
         Other changes:
+            #396  Windows: Drop support for Visual Studio <=8.0/2005
             #403  xmlwf: Document exit codes in xmlwf manpage and
                     exit with code 3 (rather than code 1) for output errors
                     when used with "-d DIRECTORY"
+       #383 #392  Autotools: Use -Werror while configure tests the compiler
+                    for supported compile flags to avoid false positives
        #383 #393  Autotools: Improve handling of user (C|CPP|CXX|LD)FLAGS,
                     e.g. ensure that they have the last word over flags added
                     while running ./configure
@@ -27,6 +34,7 @@ Release x.x.x xxx xxxxxxxxx xx xxxx
 
         Special thanks to:
             asavah
+            Ben Wagner
             Jeffrey Walton
             Joe Orton
             Ma Lin
