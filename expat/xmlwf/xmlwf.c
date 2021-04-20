@@ -50,14 +50,6 @@
 #  include <wchar.h>
 #endif
 
-enum ExitCode {
-  XMLWF_EXIT_SUCCESS = 0,
-  XMLWF_EXIT_INTERNAL_ERROR = 1,
-  XMLWF_EXIT_NOT_WELLFORMED = 2,
-  XMLWF_EXIT_OUTPUT_ERROR = 3,
-  XMLWF_EXIT_USAGE_ERROR = 4,
-};
-
 /* Structures for handler user data */
 typedef struct NotationList {
   struct NotationList *next;
@@ -916,19 +908,6 @@ usage(const XML_Char *prog, int rc) {
 int wmain(int argc, XML_Char **argv);
 #endif
 
-#define XMLWF_SHIFT_ARG_INTO(constCharStarTarget, argc, argv, i, j)            \
-  {                                                                            \
-    if (argv[i][j + 1] == T('\0')) {                                           \
-      if (++i == argc)                                                         \
-        usage(argv[0], XMLWF_EXIT_USAGE_ERROR);                                \
-      constCharStarTarget = argv[i];                                           \
-    } else {                                                                   \
-      constCharStarTarget = argv[i] + j + 1;                                   \
-    }                                                                          \
-    i++;                                                                       \
-    j = 0;                                                                     \
-  }
-
 int
 tmain(int argc, XML_Char **argv) {
   int i, j;
@@ -941,7 +920,7 @@ tmain(int argc, XML_Char **argv) {
   int requireStandalone = 0;
   int requiresNotations = 0;
   int continueOnError = 0;
-  int exitCode = XMLWF_EXIT_SUCCESS;
+  int exitCode = 0;
   enum XML_ParamEntityParsing paramEntityParsing
       = XML_PARAM_ENTITY_PARSING_NEVER;
   int useStdin = 0;
@@ -1005,13 +984,27 @@ tmain(int argc, XML_Char **argv) {
       j++;
       break;
     case T('d'):
-      XMLWF_SHIFT_ARG_INTO(outputDir, argc, argv, i, j);
+      if (argv[i][j + 1] == T('\0')) {
+        if (++i == argc)
+          usage(argv[0], 4);
+        outputDir = argv[i];
+      } else
+        outputDir = argv[i] + j + 1;
+      i++;
+      j = 0;
       break;
     case T('e'):
-      XMLWF_SHIFT_ARG_INTO(encoding, argc, argv, i, j);
+      if (argv[i][j + 1] == T('\0')) {
+        if (++i == argc)
+          usage(argv[0], 4);
+        encoding = argv[i];
+      } else
+        encoding = argv[i] + j + 1;
+      i++;
+      j = 0;
       break;
     case T('h'):
-      usage(argv[0], XMLWF_EXIT_SUCCESS);
+      usage(argv[0], 0);
       return 0;
     case T('v'):
       showVersion(argv[0]);
@@ -1028,7 +1021,7 @@ tmain(int argc, XML_Char **argv) {
       }
       /* fall through */
     default:
-      usage(argv[0], XMLWF_EXIT_USAGE_ERROR);
+      usage(argv[0], 4);
     }
   }
   if (i == argc) {
@@ -1047,7 +1040,7 @@ tmain(int argc, XML_Char **argv) {
 
     if (! parser) {
       tperror(T("Could not instantiate parser"));
-      exit(XMLWF_EXIT_INTERNAL_ERROR);
+      exit(1);
     }
 
     if (requireStandalone)
@@ -1083,7 +1076,7 @@ tmain(int argc, XML_Char **argv) {
                                    * sizeof(XML_Char));
       if (! outName) {
         tperror(T("Could not allocate memory"));
-        exit(XMLWF_EXIT_INTERNAL_ERROR);
+        exit(1);
       }
       tcscpy(outName, outputDir);
       tcscat(outName, delim);
@@ -1091,7 +1084,7 @@ tmain(int argc, XML_Char **argv) {
       userData.fp = tfopen(outName, T("wb"));
       if (! userData.fp) {
         tperror(outName);
-        exitCode = XMLWF_EXIT_OUTPUT_ERROR;
+        exitCode = 3;
         if (continueOnError) {
           free(outName);
           cleanupUserData(&userData);
@@ -1160,7 +1153,7 @@ tmain(int argc, XML_Char **argv) {
     }
     XML_ParserFree(parser);
     if (! result) {
-      exitCode = XMLWF_EXIT_NOT_WELLFORMED;
+      exitCode = 2;
       cleanupUserData(&userData);
       if (! continueOnError) {
         break;
