@@ -442,10 +442,7 @@ if(WIN32 AND NOT MINGW)
     # NOTE: "set_property(TARGET expat PROPERTY PREFIX lib)" would only affect *.dll
     #       files but not *.lib files, so we have to rely on property OUTPUT_NAME, instead.
     #       Property CMAKE_*_POSTFIX still applies.
-    set(_EXPAT_OUTPUT_NAME libexpat)
-    set_property(TARGET expat PROPERTY OUTPUT_NAME ${_EXPAT_OUTPUT_NAME})
-else()
-    set(_EXPAT_OUTPUT_NAME expat)
+    set_property(TARGET expat PROPERTY OUTPUT_NAME libexpat)
 endif()
 
 target_include_directories(expat
@@ -497,7 +494,6 @@ if(EXPAT_BUILD_PKGCONFIG)
         string(TOLOWER "${_build_type}" _build_type_lower)
         string(TOUPPER "${_build_type}" _build_type_upper)
         set_property(TARGET expat PROPERTY "pkgconfig_${_build_type_lower}_name" "expat${CMAKE_${_build_type_upper}_POSTFIX}")
-        set_property(TARGET expat PROPERTY "pkgconfig_${_build_type_lower}_output_name" "${_EXPAT_OUTPUT_NAME}${CMAKE_${_build_type_upper}_POSTFIX}")
         if(_EXPAT_LIBM_FOUND)
             set_property(TARGET expat PROPERTY "pkgconfig_libm" "-lm")
         else()
