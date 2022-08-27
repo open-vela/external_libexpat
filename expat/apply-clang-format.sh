@@ -46,7 +46,7 @@ fi
 
 expand --tabs=2 --initial lib/siphash.h | sponge lib/siphash.h
 
-find . \
+find \
         -name '*.[ch]' \
         -o -name '*.cpp' \
         -o -name '*.cxx' \
@@ -56,6 +56,6 @@ find . \
 
 sed \
         -e 's, @$,@,' \
-        -e 's,#\( \+\)cmakedefine,#cmakedefine,' \
+        -e 's,#\( \+\)cmakedefine,\1#cmakedefine,' \
         -i \
         expat_config.h.cmake
